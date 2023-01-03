@@ -13,6 +13,8 @@ function PlaylistFeed({ data, personalPlaylist, handlePreviewClick}) {
       return playlist.image;
     }
   }
+
+  console.log(handlePreviewClick)
     return (
       <Row md={4} className="g-4">
         {data.map(playlist =>

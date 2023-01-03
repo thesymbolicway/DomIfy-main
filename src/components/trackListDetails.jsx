@@ -4,10 +4,18 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
 import { getPlaylists, addTrackToPlaylist } from '../services/backend';
+import { getTrackPreview, playTrackPreview } from '../services/spotify';
+import Spotify from 'https://esm.sh/spotify-web-playback';
+
+
 
 function TrackListDetails({data, personalPlaylist, onDeleteTrack}) {
     const [userPlaylists, setUserPlaylists] = useState([])
+    const [previewUrl, setPreviewUrl] = useState(null);
+    const [player, setPlayer] = useState(null);
+    const [currentTrack, setCurrentTrack] = useState(null);
 
+    
     useEffect(() => {
         getPlaylists().then(setUserPlaylists)
     }, [])
@@ -34,9 +42,9 @@ function TrackListDetails({data, personalPlaylist, onDeleteTrack}) {
     function renderDuration(data) {
         let duration;
         if(personalPlaylist) {
-            duration = data.duration_ms
+          duration = data.duration_ms;
         } else {
-            duration = data.track.duration_ms;
+          duration = data.track.duration_ms;
         }
     
         const minutes = Math.floor(duration / 60000);
@@ -57,6 +65,13 @@ function TrackListDetails({data, personalPlaylist, onDeleteTrack}) {
         addTrackToPlaylist(playlistId, trackId)
     }
 
+
+    async function handlePreviewClick(trackId) {
+        const previewUrl = await getTrackPreview(trackId);
+        setPreviewUrl(previewUrl);
+        playTrackPreview(previewUrl);
+      }
+
     function renderAction(data) {
         if(personalPlaylist) {
             return (
@@ -65,14 +80,26 @@ function TrackListDetails({data, personalPlaylist, onDeleteTrack}) {
         }
         else {
             return (
-                <DropdownButton onSelect={playlistId => onAddToPlaylist(playlistId, data.track.id)} id="addToPlaylist" title="Add me to a playlist">
-                    {
-                        userPlaylists.map(playlist => <Dropdown.Item eventKey={playlist.id} >{playlist.name}</Dropdown.Item>)
-                    }
-                </DropdownButton>
-            )
-        }
-    }
+            <>
+           <Button
+size="sm"
+variant="secondary"
+onClick={async () => {
+const previewUrl = await getTrackPreview(data.track.id);
+playTrackPreview(previewUrl);
+}}
+>
+Preview
+</Button>
+<DropdownButton onSelect={playlistId => onAddToPlaylist(playlistId, data.track.id)} id="addToPlaylist" title="Add me to a playlist">
+{
+userPlaylists.map(playlist => <Dropdown.Item eventKey={playlist.id} >{playlist.name}</Dropdown.Item>)
+}
+</DropdownButton>
+</>
+);
+}
+}
 
     return (
         <div>

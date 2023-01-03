@@ -14,6 +14,7 @@ function PlaylistPage({selectedGenre, setSelectedGenre}) {
     const [searchQuery, setSearchQuery] = useState('')
     const [searching, setSearching] = useState(false)
 
+
     useEffect(() => {
         getAuthToken().then(token => {
             setToken(token)
@@ -40,15 +41,18 @@ function PlaylistPage({selectedGenre, setSelectedGenre}) {
     const previewUrl = await getTrackPreview(trackId);
     playTrackPreview(previewUrl);
   };
+
+  console.log(handlePreviewClick)
     
     function toggleSearch() {
         setSearching(!searching)
     }
 
+
     return (
         <div className='playlist-page'>
             <div className='playlist-page-card'>
-                <h1 className='mb-20'>Search For Playlist</h1>
+                <h1 className='mb-20'>Search For A Playlist</h1>
                 <DropDown
                 options={listOfGenres}
                 raiseChange={onGenreChange}
@@ -63,6 +67,7 @@ function PlaylistPage({selectedGenre, setSelectedGenre}) {
                 <PlaylistFeed 
                     data={searchResults} 
                     personalPlaylist={false}
+                    handlePreviewClick={handlePreviewClick}
                 />
                 :
                 <PlaylistFeed 

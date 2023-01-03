@@ -6,6 +6,8 @@ function PersonalPlaylistCard({ data, image, personalPlaylist, handlePreviewClic
   const navigate = useNavigate();
    const audioRef = useRef();
 
+
+   console.log(handlePreviewClick);
   function getNavigation() {
     if (personalPlaylist) {
       navigate(`/me/${data.id}`);
