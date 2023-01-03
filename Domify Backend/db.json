@@ -1,0 +1,16 @@
+{
+  "profile": {
+    "name": "John Smith",
+    "city": "New York, NY"
+  },
+  "playlists": [
+    {
+      "name": "Summer Playlist",
+      "description": "Here is my summer Music",
+      "image": "https://images.pexels.com/photos/1152359/pexels-photo-1152359.jpeg?cs=srgb&dl=pexels-marctutorials-1152359.jpg&fm=jpg",
+      "followers": 0,
+      "tracks": [],
+      "id": 1
+    }
+  ]
+}

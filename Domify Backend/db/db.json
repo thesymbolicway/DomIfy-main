@@ -1,0 +1,52 @@
+{
+  "profile": {
+    "name": "John Smith",
+    "city": "New York, NY",
+    "image": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+  },
+  "playlists": [
+    {
+      "name": "Testing Platylist",
+      "description": "Here's my description",
+      "image": "https://images.unsplash.com/photo-1641522682563-850550dff807?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+      "followers": 0,
+      "tracks": [
+        "3LI4MmibTkXH5cGpCGZgyw",
+        "0skYUMpS0AcbpjcGsAbRGj",
+        "7xyYsOvq5Ec3P4fr6mM9fD",
+        "3AJwUDP919kvQ9QcozQPxg",
+        "0ntQJM78wzOLVeCUAW7Y45",
+        "3tSmXSxaAnU1EPGKa6NytH",
+        "5CWWOxTehNz94b4Xs0xFYV"
+      ],
+      "id": 1
+    },
+    {
+      "name": "Summer Playlist 2022",
+      "description": "Here is my summer playlist #1",
+      "image": "https://images.pexels.com/photos/1152359/pexels-photo-1152359.jpeg?cs=srgb&dl=pexels-marctutorials-1152359.jpg&fm=jpg",
+      "followers": 0,
+      "tracks": [
+        "200x8ONbPfFzByUr3fVz46",
+        "28n8z9IQKyjMPxmvYMBqZa",
+        "2hsarLx1u2OgOmkcJ8ejBm"
+      ],
+      "id": 3
+    },
+    {
+      "name": "Ben's Beer drinking playlist",
+      "description": "6 pack to the dome!!",
+      "image": "https://pyxis.nymag.com/v1/imgs/6bc/6b8/40fb683dedec6678895f83ccd1704027d2-06-baby-beer.rsquare.w700.jpg",
+      "followers": 0,
+      "tracks": [
+        "6Lmx6bz3PGYuNSjKMnYBOa",
+        "6leiB1fEsTnVCuPiielde5",
+        "7BD50ATrF3Vab5FQy7vtK8",
+        "18BajNiyvH6GpYshB0unrm",
+        "67AdiJcurlf6gocGobfaXs",
+        "05RgAMGypEvqhNs5hPCbMS"
+      ],
+      "id": 4
+    }
+  ]
+}
